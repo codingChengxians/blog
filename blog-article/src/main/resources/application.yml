@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 12345678
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/blog_article?useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true&autoReconnectForPools=true&allowMultiQueries=true&serverTimezone=UTC
+lgging:
+  level:
+    com.cloud.blog.article.mapper: debug
+
+#MyBitas
+mybatis:
+  mapper-locations: classpath*:mapper**/*.xml
