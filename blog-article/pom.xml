@@ -56,6 +56,35 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <!--容器名称 -->
+                    <imageName>${project.artifactId}:${project.version}</imageName>
+                    <!-- java版本-->
+                    <baseImage>java</baseImage>
+                    <!--制作者信息 -->
+                    <maintainer>luokai 729706611@qq.com</maintainer>
+                    <!-- 工作路径-->
+                    <workdir>/ROOT</workdir>
+                    <cmd>["java", "-version"]</cmd>
+                    <!-- 执行命令-->
+
+                    <entryPoint>["java", "-jar", "${project.build.finalName}.jar"]</entryPoint>
+                    <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
+                    <!-- 远程docker地址-->
+                    <dockerHost>http://60.205.189.14:2375</dockerHost>
+                    <resources>
+                        <resource>
+                            <targetPath>/ROOT</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
