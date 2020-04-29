@@ -58,7 +58,7 @@ public class ArticleController {
     @RequestMapping("/delete")
     public ApiResult delete(Long id) {
         this.articleService.delete(id);
-        
+//测试jenkins 推送
         return new ApiResult();
     }
 }
