@@ -58,6 +58,7 @@ public class ArticleController {
     @RequestMapping("/delete")
     public ApiResult delete(Long id) {
         this.articleService.delete(id);
+        
         return new ApiResult();
     }
 }
