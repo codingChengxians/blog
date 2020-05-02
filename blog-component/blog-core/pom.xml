@@ -6,7 +6,9 @@
         <groupId>com.cloud</groupId>
         <artifactId>blog</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+        <relativePath>../../pom.xml</relativePath>
+
+        <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     </parent>
     <groupId>com.cloud</groupId>
     <artifactId>blog-core</artifactId>
